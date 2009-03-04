@@ -1,0 +1,46 @@
+== Synopsis 
+  An scm hook script (initially for svn) to submit commit messages to a
+  twitter feed for notification
+
+== Examples
+  Add the following to your post-commit file
+
+  REPOS="$1"
+  REV="$2"
+  /opt/svn/hooks/ruby_scm_twitter.rb -u <twitter username> -p <twitter password> -f "${REPOS}" -r "${REV}"
+
+== Usage 
+* SVN
+  * Put ruby-scm-twitter.rb in your hooks directory
+  * Make sure it is executable
+  * Register a twitter user, add friends (keep the user's feed private
+    if you dont want the world reading your commits...)
+  * Edit your post-commit file in hooks to call the script
+
+== Prerequisites
+  You'll need the following gems: twitter, httparty
+  
+  You will also need the svn binaries in your path statement to allow svnlook to be called
+
+== Options
+  -u, --user        Twitter username
+  -p, --password    Twitter password
+  -f, --file        Repository of commit
+  -r, --revision    Revision number of commit
+  -s, --scm         SCM to use (initially only supports SVN)
+  -v, --version     Display version of this script
+  -V, --verbose     Verbose
+  -h, --help        Help
+
+== Author
+  Chris Anderton
+  http://thewebfellas.com
+ 
+  Inspired by twitvn (http://code.google.com/p/twitvn/)
+
+  Application skeleton by Todd Werth (http://blog.infinitered.com/entries/show/5)
+
+== Copyright
+  Copyright (c) 2009 Chris Anderton.
+  Licensed under the GNU General Public License v3
+  http://www.gnu.org/licenses/gpl.html
