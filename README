@@ -1,6 +1,9 @@
 == Synopsis 
-  An scm hook script (initially for svn) to submit commit messages to a
-  twitter feed for notification
+  Party like it's 2007! I know all the cool kids have migrated to git, but I found this script in my
+  cupboard and thought I may as well release it in case it's of use to anybody.
+
+  This script is an scm hook script (initially for svn) to submit commit messages to a
+  twitter feed for notification.
 
 == Examples
   Add the following to your post-commit file
